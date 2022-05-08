@@ -32,6 +32,8 @@ app.post('/api/notes', (req, res) => {
     
 })
 
-app.listen(PORT, () => {
-    console.log("server is running")
-})
+// app.listen(PORT, () => {
+//     console.log("server is running")
+// })
+
+app.listen(process.env.PORT || 3000);
