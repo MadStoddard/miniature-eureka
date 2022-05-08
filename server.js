@@ -5,7 +5,7 @@ const dbFile = require('./db/db.json')
 
 const app = express();
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(express.static("public"))
 app.use(express.urlencoded({extended: false}))
@@ -32,8 +32,6 @@ app.post('/api/notes', (req, res) => {
     
 })
 
-// app.listen(PORT, () => {
-//     console.log("server is running")
-// })
-
-app.listen(process.env.PORT || 3000);
+app.listen(PORT, () => {
+    console.log("server is running")
+})
